@@ -1,0 +1,14 @@
+name:Trigger Action on a CRON Schedule
+|
+on:
+  Schedule:
+    #Runs "At 11:00 on every day of-week from Monday through Friday"
+    - cron: '0 11 * * 1-5'
+ jobs:
+   build:
+     name: Trigger Code Checkout
+     runs-on: ubuntu-latest
+     # steps represents a sequence of tasks that will be executed as part of the job
+     steps:
+       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+       - uses: actions/checkout@v3
